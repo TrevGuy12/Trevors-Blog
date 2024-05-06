@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Trevor Ortell" description="About Trevor Ortell">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/3S7A6625-2.jpg"
+					alt="Trevor Ortell at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+						<p style="margin: 20px;">
+							I am currently a student embarking on a fascinating journey in computer science, with my main interests and future career firmly rooted in Machine Learning and Large Language Models. I have a profound passion for understanding how computers think and solve complex problems.
+						</p>
+						<p style="margin: 20px;">
+							Raised by my father, who first introduced me to the expansive world of computer science, I've been inspired by the potential of technology to transform lives. I am a proud student at Rocky Mountain High School, and I am eagerly preparing to begin my studies at Colorado State University (CSU), where I will focus on Computer Science with a specialization in Machine Learning and Artificial Intelligence.
+						</p>
+						<p style="margin: 20px;">
+							My ambition is to immerse myself in as much knowledge as possible and apply it to sectors where automation could significantly benefit yet remains underutilized. I am particularly interested in exploring innovative applications in fields such as agriculture and education, among others. Through this blog, I aim to share my experiences, discoveries, and insights as I navigate through my academic and professional journey in this exciting field.
+						</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p style="margin: 20px;">
+						My educational journey began at <strong>Rocky Mountain High School</strong>, where my interest in technology first took root. Under the mentorship of inspiring teachers, I engaged in various STEM-related activities that paved the way for my future endeavors.
+					</p>
+					<p style="margin: 20px;">
+						Looking ahead, I am set to advance my studies at <strong>Colorado State University (CSU)</strong>, where I will major in Computer Science. My focus will be on <em>Machine Learning and Artificial Intelligence</em>, areas I am deeply passionate about. CSU's innovative programs and expert faculty are what drew me to this prestigious institution, and I am excited about the opportunities to engage with cutting-edge research and collaborative projects.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p style="margin: 20px;">
+						I am eager to apply my skills in new contexts and am looking for opportunities to collaborate on projects that challenge the status quo and push the boundaries of what is possible with data. Whether leading a team or working independently, I bring a thorough, analytical approach to my work, ensuring that all projects benefit from high-quality data insights and innovative problem-solving techniques.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
